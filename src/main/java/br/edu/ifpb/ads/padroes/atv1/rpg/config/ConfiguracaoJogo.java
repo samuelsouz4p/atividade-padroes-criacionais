@@ -2,18 +2,25 @@ package br.edu.ifpb.ads.padroes.atv1.rpg.config;
 
 public class ConfiguracaoJogo {
 
-    private int nivelDificuldade;
+    private static ConfiguracaoJogo instancia;
 
-    public ConfiguracaoJogo() {
-        this.nivelDificuldade = 1;
+    private String versao = "1.0";
+
+    private ConfiguracaoJogo() {
     }
 
-    public int getNivelDificuldade() {
-        return nivelDificuldade;
+    public static ConfiguracaoJogo getInstance() {
+        if (instancia == null) {
+            instancia = new ConfiguracaoJogo();
+        }
+        return instancia;
     }
 
-    public void setNivelDificuldade(int nivel) {
-        this.nivelDificuldade = nivel;
+    public String getVersao() {
+        return versao;
     }
 
+    public void setVersao(String versao) {
+        this.versao = versao;
+    }
 }

@@ -30,7 +30,23 @@ public class Personagem {
         this.habilidades = habilidades;
     }
 
-    // Getters e Setters básicos
+    // PROTOTYPE
+    public Personagem clonar() {
+        return new Personagem(
+                nome,
+                raca,
+                classe,
+                forca,
+                inteligencia,
+                agilidade,
+                vida,
+                mana,
+                arma,
+                armadura,
+                habilidades.clone()
+        );
+    }
+
     public String getNome() {
         return nome;
     }
@@ -81,8 +97,16 @@ public class Personagem {
 
     @Override
     public String toString() {
-        return String.format("%s - %s %s (F:%d, I:%d, A:%d, V:%d, M:%d)",
-                nome, raca, classe, forca, inteligencia, agilidade, vida, mana);
+        return String.format(
+                "%s - %s %s (F:%d, I:%d, A:%d, V:%d, M:%d)",
+                nome,
+                raca,
+                classe,
+                forca,
+                inteligencia,
+                agilidade,
+                vida,
+                mana
+        );
     }
-
 }
