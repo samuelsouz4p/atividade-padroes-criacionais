@@ -1,4 +1,13 @@
 package br.edu.ifpb.ads.padroes.atv2.config;
 
-public class PayPalModule {
+import br.edu.ifpb.ads.padroes.atv2.gateway.PagamentoGateway;
+import br.edu.ifpb.ads.padroes.atv2.gateway.PayPalGateway;
+import com.google.inject.AbstractModule;
+
+public class PayPalModule extends AbstractModule{
+
+    @Override
+    protected void configure(){
+        bind(PagamentoGateway.class).to(PayPalGateway.class);
+    }
 }
